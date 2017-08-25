@@ -1,0 +1,41 @@
+﻿
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Part12</title>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angucomplete-alt.js"></script>
+    <script src="~/Scripts/MyApp/Part12.js"></script>
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/angucomplete-alt.css" rel="stylesheet" />
+
+    <style type="text/css">
+        .angucomplete-dropdown {
+            overflow-y: auto;
+            max-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"> 
+        <h2>Auto Complete textbox in AngularJS</h2>
+        <div ng-app="MyApp">
+            <div ng-controller="Part12">
+                <div angucomplete-alt id="txtAutocomplete" placeholder="Type country name" pause="100"
+                     selected-object="AfterSelectedCountry" local-data="Countries" search-fields="Name"
+                     title-field="Name" minlength="1" input-class="form-control" match-class="highlight">
+                </div>
+                
+                <div ng-show="SelectedCountry">
+                    Selected Country : {{SelectedCountry.Name}}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

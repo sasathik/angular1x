@@ -1,0 +1,19 @@
+﻿<h2>
+    Login Page
+</h2>
+<form ng-submit="Login()">
+    <div>
+        <label>User Name : </label>
+        <input type="text" ng-model="Account.Username" />
+    </div>
+    <div>
+        <label>Password : </label>
+        <input type="password" ng-model="Account.Password" />
+    </div>
+    <div>
+        <input type="submit" value="Submit" />
+    </div>
+    <div style="color:red">
+        {{Message}}
+    </div>
+</form>

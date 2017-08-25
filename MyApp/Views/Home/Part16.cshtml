@@ -1,0 +1,21 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "Index";
+}
+<h2>treeview in angularjs application</h2>
+<div ng-app="MyApp" ng-controller="Part16">
+    <span>Selected Node : {{mytree.currentNode.FileName}}</span>
+    <div data-angular-treeview="true"
+         data-tree-id="mytree"
+         data-tree-model="List"
+         data-node-id="ID"
+         data-node-label="FileName"
+         data-node-children="Childrens">
+    </div>
+</div>
+
+<link href="~/Content/treeview/angular.treeview.css" rel="stylesheet" />
+
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/treeview/angular.treeview.js"></script>
+<script src="~/Scripts/MyApp/Part16.js"></script>

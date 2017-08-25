@@ -1,0 +1,39 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1','packages':['corechart','orgchart']}]}"></script>
+    <script src="~/Scripts/MyApp/Part15.js"></script>
+    <style>
+        #chart table {
+            border-spacing: 0;
+            border-collapse: separate;
+        }
+
+        #chart tr td {
+            line-height: 15px;
+        }
+
+        .title {
+            color: red;
+        }
+
+        .google-visualization--orgchart-node-medium {
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body ng-app="MyApp">
+    <div ng-controller="Part15">
+        <h2>Google Organization chart using AngularJS</h2>
+        <div id="chart" ng-model="ChartData" org-chart="ChartData" style="text-align:center">
+            Please Wait...
+        </div>
+    </div>
+</body>
+</html>

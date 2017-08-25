@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Part4";
+}
+
+<h2>Part4</h2>
+
+<div ng-controller="Part4" class="table-responsive" style="height:500px;overflow:auto;">
+    <table class="table table-bordered table-hover table-striped" >
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Currency Code
+            </th>
+        </tr>
+        <tr ng-repeat="Currency in Currencies" ng-class-odd="'odd'" ng-class-even="even">
+            <td>
+                {{Currency.Name}}
+            </td>
+            <td>
+                {{Currency.CurrencyCode}}
+            </td>
+        </tr>
+    </table>
+</div>
+
+@section scripts {
+    <script src="~/Scripts/MyApp/Part4.js"></script>
+}
+
+

@@ -1,0 +1,73 @@
+﻿
+@{
+    Layout = null;
+    ViewBag.Title = "Test part 2 event scheduler";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Part214</title>
+</head>
+<body>
+    <h2>Event/Scheduler calendar using ui-calendar in AngularJS</h2>
+    @* AngularJS *@
+    <div ng-app="MyApp" ng-controller="Part214"> 
+        <script type="text/ng-template" id="modalContent.html">
+            <div class="modal-header">
+                <h3 class="modal-title">Events</h3>
+            </div>
+            <div class="modal-body">
+                <div class="error">{{Message}}</div>
+                <div class="form-group">
+                    <label>Event Title : </label>
+                    <input tyhpe="text" ng-model="NewEvent.Title" autofocus class="form-control" required />
+                    <label>Event Description : </label>
+                    <input tyhpe="text" ng-model="NewEvent.Description" autofocus class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label>Time Slot : </label>
+                    <span>
+                        {{NewEvent.StartAt}} - {{NewEvent.EndAt}}
+                    </span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="button" ng-click="Ok()">Save</button>
+                <button class="btn btn-danger" type="button" ng-show="NewEvent.EventID > 0" ng-click="Delete()">Delete</button>
+                <button class="btn btn-warning" type="button" ng-click="Cancel()">Cancel</button>
+            </div>
+        </script>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="calendar" ui-calendar="UIConfig.calendar" ng-model="EventSources" calendar="myCalendar">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @* CSS *@
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/fullcalander/fullcalander.css" rel="stylesheet" />
+
+    @* JS *@
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/fullcalander/moment.js"></script>
+    <script src="~/Scripts/fullcalander/calander.js"></script>
+    <script src="~/Scripts/fullcalander/fullcalandar.js"></script>
+    <script src="~/Scripts/fullcalander/gcal.js"></script>
+    <script src="~/Scripts/fullcalander/ui-bootstrap-tpls.js"></script>
+
+    @* localJS *@
+    <script src="~/Scripts/MyApp/Part214.js"></script>
+
+    <style>
+        .error{
+            color:red;
+        }
+    </style>
+</body>
+</html>

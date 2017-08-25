@@ -1,0 +1,68 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Part13</title>
+</head>
+<body>
+    <div class="container"> 
+        <h2>Infinity scroll in AngularJS</h2>
+        <div ng-app="MyApp" ng-controller="Part13">
+            <div style="position:relative;">
+                <span ng-show="IsLoading">Loading...</span>
+                <div infinityscroll="NextPage()" style="height:400px; overflow:auto;">
+                    <table class="table table-responsive table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Country Region Code
+                                </th>
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    Modified Date
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="country in CountryList">
+                                <td>{{country.CountryRegionCode}}</td>
+                                <td>{{country.Name}}</td>
+                                <td>{{country.ModifiedDate}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    @* JS *@
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/MyApp/Part13.js"></script>
+
+    @* CSS *@
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+    <style type="text/css">
+        .loading{
+            position:absolute;
+            left:48%;
+            top:48%;
+            display:block;
+            padding:5px;
+            background-color:yellow;
+            color:red;
+            border:1px solid;
+            margin:0 auto;
+        }
+    </style>
+</body>
+</html>
